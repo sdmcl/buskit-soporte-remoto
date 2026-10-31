@@ -25,8 +25,20 @@ en cache el destino de una entrega anterior.
 
 La carpeta raiz redirige al MSI. `.htaccess` mantiene enlaces fijos mediante
 redirecciones temporales; los archivos reales se conservan en
-`releases/1.5.0-buskit.1/`. El manifiesto identifica esa version como preliminar.
+`releases/1.5.0-buskit.2/`. El manifiesto identifica esa version como preliminar.
 GitHub Releases conserva una segunda descarga de los mismos bytes.
+
+La edicion `1.5.0-buskit.2` incluye el MSI `1.5.2.0` en espanol, con el logo
+y los colores de BUSKIT. Instala en `C:\BusKIT\Soporte`; el ejecutable para
+integraciones es `C:\BusKIT\Soporte\BUSKITSoporteRemoto.exe`.
+
+La [compilacion 41225416596](https://github.com/sdmcl/buskit-soporte-remoto/actions/runs/41225416596)
+comprobo una instalacion nueva, reparacion y desinstalacion en Windows. Valido
+la ruta fija incluso al pasar otra por linea de comandos, permisos de la carpeta,
+servicio activo y automatico, registro y acceso directo. La carpeta de otro
+sistema BusKIT se conservo. Las tres operaciones MSI terminaron con codigo 0.
+Quedan pendientes la revision visual del asistente nativo y una conexion real
+entre dos equipos, incluida la reconexion despues de reiniciar el cliente.
 
 ## Publicar otra version
 
@@ -45,8 +57,8 @@ No se cambian los instaladores, manifiestos ni activaciones SQL de otras empresa
 No se modifica Nginx, PM2, UFW ni el servidor RustDesk. No se publican credenciales.
 La publicacion de `latest.json` aqui no activa actualizaciones automaticas del cliente.
 
-Los binarios de la primera entrega corresponden a
-`b20bca53f5982231a77e10723da234ab22ab2d2f`, con los mismos hashes de GitHub.
+Los binarios de esta entrega corresponden a
+`9fd99270ba4ccb4ff5ddd781205e910fada4d84f`, con los mismos hashes de GitHub.
 Los cambios de hosting posteriores solo afectan archivos de distribucion y documentos.
 
 ## Retirada o vuelta a otra version

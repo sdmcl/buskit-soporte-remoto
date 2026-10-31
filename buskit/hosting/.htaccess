@@ -4,5 +4,5 @@
     Header always set X-Content-Type-Options "nosniff"
 </IfModule>
 
-RedirectMatch 302 "^/empresas/BUSKIT/soporte-remoto/?$" "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.1/BUSKIT-Soporte-Remoto.msi"
-RedirectMatch 302 "^/empresas/BUSKIT/soporte-remoto/(BUSKIT-Soporte-Remoto[.](exe|msi)|BUSKIT-Soporte-Remoto-source[.]zip|GUIA-WINDOWS[.]md|LICENCE|LICENSE-NOTICE[.]txt|SHA256SUMS[.]txt)$" "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.1/$1"
+RedirectMatch 302 "^/empresas/BUSKIT/soporte-remoto/?$" "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.2/BUSKIT-Soporte-Remoto.msi"
+RedirectMatch 302 "^/empresas/BUSKIT/soporte-remoto/(BUSKIT-Soporte-Remoto[.](exe|msi)|BUSKIT-Soporte-Remoto-source[.]zip|GUIA-WINDOWS[.]md|LICENCE|LICENSE-NOTICE[.]txt|SHA256SUMS[.]txt)$" "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.2/$1"
