@@ -1,4 +1,4 @@
-param([Parameter(Mandatory)][string]$MsiPath)
+param([Parameter(Mandatory)][string]$MsiPath, [string]$PreviousMsiPath)
 $ErrorActionPreference = 'Stop'
 if ($env:GITHUB_ACTIONS -ne 'true' -or $env:RUNNER_OS -ne 'Windows') {
     throw 'Esta prueba instala y desinstala el producto: solo se ejecuta en el runner Windows desechable.'
@@ -81,3 +81,30 @@ if (Test-Path -LiteralPath $exe) { throw 'La desinstalacion dejo el ejecutable.'
 if (Get-Service $appId -ErrorAction SilentlyContinue) { throw 'La desinstalacion dejo el servicio.' }
 if (-not (Test-Path -LiteralPath $neighbour)) { throw 'Se modifico la carpeta de otro sistema.' }
 Write-Output 'Instalacion nueva, reparacion y desinstalacion en C:\BusKIT\Soporte: OK'
+
+if ($PreviousMsiPath) {
+    $previousMsi = (Resolve-Path -LiteralPath $PreviousMsiPath).Path
+    Invoke-Msi '/i' $previousMsi 'previous' 'DESKTOPSHORTCUTS=1'
+    (Get-Service $appId).WaitForStatus('Running', [TimeSpan]::FromSeconds(20))
+    & $exe --option access-mode view | Out-Null
+    & $exe --option $remoteConfig N | Out-Null
+    & $exe --option allow-numeric-one-time-password N | Out-Null
+    & $exe --option temporary-password-length 8 | Out-Null
+    Invoke-Msi '/i' $msi 'upgrade' 'DESKTOPSHORTCUTS=1'
+    Assert-Installed
+    foreach ($setting in @{
+        'access-mode' = 'view'
+        'allow-remote-config-modification' = 'N'
+        'allow-numeric-one-time-password' = 'N'
+        'temporary-password-length' = '8'
+    }.GetEnumerator()) {
+        if ((& $exe --option $setting.Key | Out-String).Trim() -ne $setting.Value) {
+            throw "La actualizacion no conservo la preferencia $($setting.Key)."
+        }
+    }
+    Invoke-Msi '/x' $msi 'remove-upgrade'
+    if (Test-Path -LiteralPath $exe) { throw 'La desinstalacion de la actualizacion dejo el ejecutable.' }
+    if (Get-Service $appId -ErrorAction SilentlyContinue) { throw 'La desinstalacion de la actualizacion dejo el servicio.' }
+    if (-not (Test-Path -LiteralPath $neighbour)) { throw 'La actualizacion modifico otro sistema BusKIT.' }
+    Write-Output 'Actualizacion desde el MSI anterior, preferencias conservadas y desinstalacion: OK'
+}

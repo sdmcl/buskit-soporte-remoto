@@ -137,9 +137,13 @@ jobs:
           if (-not $msi) { throw 'MSI artifact missing' }
           Copy-Item $msi.FullName ../../dist/installer/BUSKIT-Soporte-Remoto.msi
           Pop-Location
-      - name: Verify fresh install, repair and removal
+      - name: Verify fresh install, repair, upgrade and removal
         shell: pwsh
-        run: ./buskit/tools/test-msi.ps1 -MsiPath dist/installer/BUSKIT-Soporte-Remoto.msi
+        run: |
+          $previous = 'dist/BUSKIT-Soporte-Remoto-previous.msi'
+          Invoke-WebRequest 'https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.2/BUSKIT-Soporte-Remoto.msi' -OutFile $previous
+          if ((Get-FileHash $previous -Algorithm SHA256).Hash.ToLower() -ne '04266a90d5b5caa5e87e91ad838f8d0e4303ea858cb3dd8c89371391465c9670') { throw 'El MSI anterior no coincide con el publicado' }
+          ./buskit/tools/test-msi.ps1 -MsiPath dist/installer/BUSKIT-Soporte-Remoto.msi -PreviousMsiPath $previous
       - name: Save installer test logs
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a

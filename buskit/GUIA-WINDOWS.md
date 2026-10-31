@@ -30,23 +30,23 @@ Los otros sistemas deben abrir esa ruta exacta, también si son aplicaciones de 
 
 Esta entrega se prepara para instalaciones nuevas: no necesitas mover carpetas ni desinstalar una versión anterior. Usa el MSI como instalador habitual de los clientes.
 
-## Cambios preparados, pendientes de publicación
+## Novedades de 1.5.0-buskit.3
 
-El código prepara **Configuración → Seguridad → Permisos → Acceso completo** seleccionado por defecto. Habilita los permisos disponibles para una sesión autorizada, incluida la modificación remota de configuración. Puede cambiarse después a **Personalizado** o **Compartir pantalla**; para deshabilitar permisos individuales, seleccionar **Personalizado** y desmarcarlos. No elimina el requisito de contraseña o aceptación configurado para conectarse.
+La edición `1.5.0-buskit.3` deja **Configuración → Seguridad → Permisos → Acceso completo** seleccionado por defecto. Habilita los permisos disponibles para una sesión autorizada, incluida la modificación remota de configuración. Puede cambiarse después a **Personalizado** o **Compartir pantalla**; para deshabilitar permisos individuales, seleccionar **Personalizado** y desmarcarlos. No elimina el requisito de contraseña o aceptación configurado para conectarse.
 
-También prepara la **contraseña temporal numérica de 6 dígitos** como valor predeterminado. El programa la genera para cada equipo; no se incorpora una contraseña compartida ni se cambia la contraseña permanente. La longitud y el uso de números pueden modificarse después.
+También deja la **contraseña temporal numérica de 6 dígitos** como valor predeterminado. El programa la genera para cada equipo; no se incorpora una contraseña compartida ni se cambia la contraseña permanente. La longitud y el uso de números pueden modificarse después.
 
 En **Acerca de** quedan el nombre, versión, fecha de compilación, huella digital e ID. Se retiran el bloque de copyright y lema y los tres enlaces de privacidad, código fuente y licencias. Los documentos de licencia y atribuciones se conservan en la distribución y en el repositorio.
 
 Al actualizar un equipo existente, se respeta una elección guardada explícitamente. Esta opción no define una contraseña ni reemplaza la autenticación de la conexión. Tampoco habilita el permiso independiente para aceptar otras conexiones desde la ventana de permisos.
 
-Estos cambios todavía no están en los instaladores descargables. La edición publicada continúa siendo `1.5.0-buskit.2`; no se ha asignado una nueva versión ni generado otro instalador.
+Estos cambios corresponden a `1.5.0-buskit.3` (MSI `1.5.3.0`). Los equipos con `1.5.0-buskit.2` deben instalar el nuevo MSI; se conservan los ajustes guardados.
 
 ### Perfil del técnico y descarga desde la aplicación
 
-También queda preparado el botón **Descargar última versión** en **Inicio** y **Ajustes → General → BUSKIT Soporte Remoto**. Abre en el navegador la URL fija del MSI indicada al principio de esta guía. El enlace lleva a la última edición publicada; no instala automáticamente ni cambia según la versión en los sistemas que lo utilizan.
+Se incluye el botón **Descargar última versión** en **Inicio** y **Ajustes → General → BUSKIT Soporte Remoto**. Abre en el navegador la URL fija del MSI indicada al principio de esta guía. El enlace lleva a la última edición publicada; no instala automáticamente ni cambia según la versión en los sistemas que lo utilizan.
 
-Para identificar al técnico, después de instalar la próxima edición que incluya estos cambios:
+Para identificar al técnico después de instalar esta edición:
 
 1. En el PC desde el que das soporte, abre **Ajustes → General → BUSKIT Soporte Remoto → Perfil del técnico**.
 2. Marca **Usar este equipo como técnico BUSKIT**.
