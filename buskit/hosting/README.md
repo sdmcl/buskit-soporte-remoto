@@ -25,20 +25,37 @@ en cache el destino de una entrega anterior.
 
 La carpeta raiz redirige al MSI. `.htaccess` mantiene enlaces fijos mediante
 redirecciones temporales; los archivos reales se conservan en
-`releases/1.5.0-buskit.2/`. El manifiesto identifica esa version como preliminar.
+`releases/1.5.0-buskit.3/`. El manifiesto identifica esa version como preliminar.
 GitHub Releases conserva una segunda descarga de los mismos bytes.
 
-La edicion `1.5.0-buskit.2` incluye el MSI `1.5.2.0` en espanol, con el logo
+La edicion `1.5.0-buskit.3` incluye el MSI `1.5.3.0` en espanol, con el logo
 y los colores de BUSKIT. Instala en `C:\BusKIT\Soporte`; el ejecutable para
 integraciones es `C:\BusKIT\Soporte\BUSKITSoporteRemoto.exe`.
 
-La [compilacion 41225416596](https://github.com/sdmcl/buskit-soporte-remoto/actions/runs/41225416596)
-comprobo una instalacion nueva, reparacion y desinstalacion en Windows. Valido
-la ruta fija incluso al pasar otra por linea de comandos, permisos de la carpeta,
-servicio activo y automatico, registro y acceso directo. La carpeta de otro
-sistema BusKIT se conservo. Las tres operaciones MSI terminaron con codigo 0.
-Quedan pendientes la revision visual del asistente nativo y una conexion real
-entre dos equipos, incluida la reconexion despues de reiniciar el cliente.
+La [compilacion 41236312527](https://github.com/sdmcl/buskit-soporte-remoto/actions/runs/41236312527)
+comprobo instalacion nueva, reparacion, actualizacion desde el MSI
+`1.5.0-buskit.2` y desinstalacion en Windows. Valido ruta fija incluso al pasar
+otra por linea de comandos, permisos de la carpeta, servicio activo y automatico,
+registro y acceso directo. Tambien comprobo acceso completo, configuracion remota,
+contrasena temporal numerica de seis digitos y conservacion de elecciones al
+reparar y actualizar. La carpeta de otro sistema BusKIT se conservo. Las seis
+operaciones MSI terminaron con codigo 0; el log de actualizacion confirma que
+se instalaron los nuevos `librustdesk.dll` y `data/app.so`.
+
+Se verificaron los SHA-256 de los siete archivos en FTPS, HTTPS y GitHub.
+La descarga completa usando la URL fija del MSI coincide con:
+
+`b9f6cdad99f781f07ccb96cb20fc3678e7d89589872325238fb7760b84cfd3de`
+
+La entrega incluye Acerca de simplificado, perfil local de tecnico con logo
+BUSKIT y nombre editable, y boton de descarga fija en Inicio y Ajustes.
+El perfil se activa solo en el PC del tecnico; los equipos clientes no lo
+activan por defecto. La guia explica como hacerlo.
+
+Estas pruebas no sustituyen la comprobacion visual del avatar y una conexion
+real entre dos equipos con esta nueva edicion, ni la reconexion despues de
+reiniciar Windows. La edicion se mantiene marcada como preliminar. La version
+anterior y los respaldos del manifiesto y redirecciones se conservaron.
 
 ## Publicar otra version
 
@@ -58,7 +75,7 @@ No se modifica Nginx, PM2, UFW ni el servidor RustDesk. No se publican credencia
 La publicacion de `latest.json` aqui no activa actualizaciones automaticas del cliente.
 
 Los binarios de esta entrega corresponden a
-`9fd99270ba4ccb4ff5ddd781205e910fada4d84f`, con los mismos hashes de GitHub.
+`6282d56463df5264440afd844f75579430c2afbe`, con los mismos hashes de GitHub.
 Los cambios de hosting posteriores solo afectan archivos de distribucion y documentos.
 
 ## Retirada o vuelta a otra version
