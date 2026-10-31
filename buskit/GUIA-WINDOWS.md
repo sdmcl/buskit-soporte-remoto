@@ -5,7 +5,11 @@ El mismo cliente permite recibir asistencia y atender varios equipos en ventanas
 
 ## Descargar y abrir
 
-Descargas oficiales de este proyecto: https://github.com/sdmcl/buskit-soporte-remoto/releases
+Descarga MSI: https://sdm.cl/empresas/BUSKIT/soporte-remoto/BUSKIT-Soporte-Remoto.msi
+
+Descarga EXE: https://sdm.cl/empresas/BUSKIT/soporte-remoto/BUSKIT-Soporte-Remoto.exe
+
+También disponibles en GitHub: https://github.com/sdmcl/buskit-soporte-remoto/releases
 
 - `BUSKIT-Soporte-Remoto.exe`: aplicación portátil; permite instalar el servicio desde su pantalla inicial.
 - `BUSKIT-Soporte-Remoto.msi`: instalación administrada para Windows x64.
@@ -58,7 +62,7 @@ La clave anterior es pública y autentica el servidor; **no es una contraseña d
 
 La identidad técnica del servicio y del MSI es `BUSKITSoporteRemoto`, con configuración independiente de RustDesk. La ventana principal muestra **BUSKIT Soporte Remoto**. Conserva los archivos de configuración privados en el equipo; no los publiques en incidencias.
 
-Las actualizaciones de esta primera versión se descargan manualmente desde las Releases de BUSKIT. La actualización automática del RustDesk original está desactivada para conservar la personalización y el servidor configurado.
+Las actualizaciones de esta primera versión se descargan manualmente desde el hosting de BUSKIT o GitHub Releases. La actualización automática del RustDesk original está desactivada para conservar la personalización y el servidor configurado.
 
 No se incluyen cuentas centrales, agenda sincronizada ni consola Pro. Se conservan el historial local, control remoto, transferencia de archivos y funciones nativas compatibles. Esta compilación inicial no empaqueta controladores opcionales de pantalla virtual ni impresión remota.
 

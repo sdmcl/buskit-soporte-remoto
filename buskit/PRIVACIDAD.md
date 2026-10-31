@@ -4,7 +4,7 @@ BUSKIT Soporte Remoto permite a un técnico acceder a la pantalla, entrada, port
 
 El cliente usa el servidor de identificación y relay de BUSKIT en `190.110.124.99`. El servidor puede procesar direcciones IP, identificadores de equipo y metadatos de conexión necesarios para establecer sesiones. RustDesk cifra el contenido de las sesiones; el relay transporta ese tráfico.
 
-Esta personalización no añade analítica, grabación automática, cuentas centrales ni un repositorio de contraseñas. Se mantienen los registros locales y el comportamiento de RustDesk OSS. GitHub sirve el código fuente y las descargas bajo sus propias condiciones.
+Esta personalización no añade analítica, grabación automática, cuentas centrales ni un repositorio de contraseñas. Se mantienen los registros locales y el comportamiento de RustDesk OSS. Los instaladores y sus fuentes se distribuyen desde el hosting de BUSKIT en `sdm.cl`; ese servidor puede registrar la IP y la solicitud de descarga. GitHub conserva el repositorio y una descarga alternativa bajo sus propias condiciones.
 
 El acceso desatendido es opcional. Cada equipo establece su propia contraseña permanente local; no existe una contraseña compartida en el instalador. Conserva esa contraseña fuera de registros de soporte públicos.
 

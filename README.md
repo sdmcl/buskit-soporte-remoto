@@ -4,7 +4,9 @@
 
 Soporte remoto para clientes Windows, basado en **RustDesk OSS 1.5.0**, con servidor propio de BUSKIT y sin licencia Pro.
 
-[Descargas](https://github.com/sdmcl/buskit-soporte-remoto/releases) · [Guía Windows y acceso desatendido](buskit/GUIA-WINDOWS.md) · [Compilación](buskit/BUILD.md) · [Privacidad](buskit/PRIVACIDAD.md)
+[Descargar MSI](https://sdm.cl/empresas/BUSKIT/soporte-remoto/BUSKIT-Soporte-Remoto.msi) · [Descargar EXE](https://sdm.cl/empresas/BUSKIT/soporte-remoto/BUSKIT-Soporte-Remoto.exe) · [GitHub Releases](https://github.com/sdmcl/buskit-soporte-remoto/releases) · [Guía Windows y acceso desatendido](buskit/GUIA-WINDOWS.md) · [Compilación](buskit/BUILD.md) · [Privacidad](buskit/PRIVACIDAD.md)
+
+Los instaladores se alojan en el mismo hosting de distribución de agencias, en una carpeta propia. Consulta [publicación y mantenimiento de descargas](buskit/hosting/README.md).
 
 ## Qué incluye
 

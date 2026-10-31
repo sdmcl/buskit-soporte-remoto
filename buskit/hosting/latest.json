@@ -1,0 +1,21 @@
+{
+  "product": "BUSKIT Soporte Remoto",
+  "version": "1.5.0-buskit.1",
+  "prerelease": true,
+  "architecture": "windows-x64",
+  "sourceCommit": "b20bca53f5982231a77e10723da234ab22ab2d2f",
+  "msi": {
+    "url": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.1/BUSKIT-Soporte-Remoto.msi",
+    "sha256": "d88226743d54ab08eb0db416f639a48e2f17cecda2aefdec2f451d622306628a",
+    "bytes": 25790398
+  },
+  "exe": {
+    "url": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.1/BUSKIT-Soporte-Remoto.exe",
+    "sha256": "a44e54fe3ce64864ee55639e3f87dda552e32b0a2d783a5fde80b5aa6ecb0419",
+    "bytes": 28412416
+  },
+  "sourceUrl": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.1/BUSKIT-Soporte-Remoto-source.zip",
+  "checksumsUrl": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.1/SHA256SUMS.txt",
+  "guideUrl": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.1/GUIA-WINDOWS.md",
+  "githubRelease": "https://github.com/sdmcl/buskit-soporte-remoto/releases/tag/v1.5.0-buskit.1"
+}
