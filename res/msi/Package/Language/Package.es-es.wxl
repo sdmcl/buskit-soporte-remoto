@@ -34,6 +34,18 @@
   <String Id="InstallDirDlgTitle" Value="{\WixUI_Font_Title}Carpeta y accesos directos" />
   <String Id="InstallDirDlgDescription" Value="BUSKIT Soporte Remoto se instalará en una carpeta fija." />
   <String Id="InstallDirDlgFolderLabel" Value="Carpeta de instalación:" />
+  <String Id="LicenseAgreementDlgTitle" Value="{\WixUI_Font_Title}Licencia de uso" />
+  <String Id="LicenseAgreementDlgDescription" Value="Lee las condiciones antes de continuar." />
+  <String Id="VerifyReadyDlgInstallTitle" Value="{\WixUI_Font_Title}Listo para instalar" />
+  <String Id="VerifyReadyDlgRepairTitle" Value="{\WixUI_Font_Title}Listo para reparar" />
+  <String Id="VerifyReadyDlgRemoveTitle" Value="{\WixUI_Font_Title}Listo para desinstalar" />
+  <String Id="VerifyReadyDlgUpdateTitle" Value="{\WixUI_Font_Title}Listo para actualizar" />
+  <String Id="ProgressDlgTitleInstalling" Value="{\WixUI_Font_Title}Instalando BUSKIT" />
+  <String Id="ProgressDlgTitleRepairing" Value="{\WixUI_Font_Title}Reparando BUSKIT" />
+  <String Id="ProgressDlgTitleRemoving" Value="{\WixUI_Font_Title}Desinstalando BUSKIT" />
+  <String Id="ProgressDlgTitleUpdating" Value="{\WixUI_Font_Title}Actualizando BUSKIT" />
+  <String Id="MaintenanceWelcomeDlgTitle" Value="{\WixUI_Font_Bigger}Mantenimiento de&#13;&#10;BUSKIT Soporte Remoto" />
+  <String Id="MaintenanceTypeDlgTitle" Value="{\WixUI_Font_Title}Reparar o desinstalar" />
   <String Id="ExitDialogTitle" Value="{\WixUI_Font_Bigger}Instalación completada" />
   <String Id="ExitDialogDescription" Value="BUSKIT Soporte Remoto está instalado.&#13;&#10;&#13;&#10;Pulsa Finalizar para cerrar el asistente." />
 </WixLocalization>
