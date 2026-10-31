@@ -41,7 +41,7 @@ No añadir contraseñas de clientes, llaves privadas, configuraciones locales, c
 - `src/common.rs` y `src/lib.rs`: un enlace de inicio y registro del módulo.
 - `src/flutter.rs`, `src/flutter_ffi.rs`, `src/core_main.rs`: nombre visible y búsqueda de la ventana coherentes; servicios, directorios y URI usan el identificador sin espacios.
 - `src/lang.rs`: sustitución del nombre visible en textos; atribución RustDesk preservada.
-- Flutter `common.dart`, ajustes y recursos: colores, logo, iconos, versión BUSKIT y enlaces de fuente/privacidad.
+- Flutter `common.dart`, ajustes y recursos: colores, logo, iconos, versión BUSKIT y enlaces de fuente/privacidad. La pantalla principal limita el área desplazable del panel izquierdo para que la instalación siga accesible con logo y nombres largos; el aviso abrevia únicamente el nombre a BUSKIT.
 - Recursos Windows y portable: metadatos e iconos del producto. MSI utiliza el empaquetado upstream con identidad independiente.
 
 No se modifica `libs/hbb_common`, captura de pantalla, cifrado, transporte, teclado, contraseña permanente o motor de sesiones. No se modifica el servidor Linux ni ningún proceso de seguimiento/GPS al compilar este cliente.

@@ -135,14 +135,15 @@ class _DesktopHomePageState extends State<DesktopHomePage>
           children: [
             Column(
               children: [
-                SingleChildScrollView(
-                  controller: _leftPaneScrollController,
-                  child: Column(
-                    key: _childKey,
-                    children: children,
+                Expanded(
+                  child: SingleChildScrollView(
+                    controller: _leftPaneScrollController,
+                    child: Column(
+                      key: _childKey,
+                      children: children,
+                    ),
                   ),
                 ),
-                Expanded(child: Container())
               ],
             ),
             if (isOutgoingOnly)
@@ -608,8 +609,8 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
                 colors: [
-                  Color.fromARGB(255, 226, 66, 188),
-                  Color.fromARGB(255, 244, 114, 124),
+                  Color(0xFF073265),
+                  Color(0xFF007F82),
                 ],
               )),
               padding: EdgeInsets.all(20),
@@ -631,7 +632,9 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                       <Widget>[
                         if (content.isNotEmpty)
                           Text(
-                            translate(content),
+                            content == 'install_tip'
+                                ? translate(content).replaceAll(appName, 'BUSKIT')
+                                : translate(content),
                             style: TextStyle(
                                 height: 1.5,
                                 color: Colors.white,

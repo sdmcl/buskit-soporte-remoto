@@ -29,7 +29,7 @@ Esta función está disponible sin RustDesk Pro. Debe configurarse previamente e
 1. Instala el MSI, o pulsa **Instalar** en la aplicación portátil, y acepta la elevación de Windows con una cuenta administradora. El servicio debe iniciar automáticamente con Windows.
 2. Abre **Configuración → Seguridad** y desbloquea los ajustes si Windows lo solicita.
 3. En **Contraseña**, selecciona **Usar contraseña permanente** y establece una contraseña larga y única para ese equipo. También existe **Usar ambas contraseñas**, que conserva la temporal para atención presencial.
-4. En el modo de aceptación de conexiones selecciona **Contraseña** (o **Contraseña y clic** si quieres permitir también la autorización manual). “Contraseña y clic” admite cualquiera de los dos métodos; no exige ambos a la vez.
+4. Selecciona **Aceptar sesiones a través de contraseña** (o **Aceptar sesiones a través de ambos** si quieres permitir también la autorización manual). “Ambos” admite contraseña o clic; no exige los dos a la vez.
 5. No actives la restricción de recibir conexiones solo cuando esté abierta la ventana. Mantén encendido y conectado el equipo; un PC suspendido o apagado no podrá atender una sesión normal.
 6. Anota el ID del equipo y guarda su contraseña en un gestor de contraseñas, separada del código fuente y de la lista de clientes.
 7. Desde el equipo del técnico, conecta a ese ID con la contraseña permanente.
@@ -56,7 +56,7 @@ La clave anterior es pública y autentica el servidor; **no es una contraseña d
 
 ## Datos locales y actualizaciones
 
-La identidad técnica es `BUSKITSoporteRemoto`, con configuración independiente de RustDesk. Los nombres visibles del producto llevan espacios. Conserva los archivos de configuración privados en el equipo; no los publiques en incidencias.
+La identidad técnica del servicio y del MSI es `BUSKITSoporteRemoto`, con configuración independiente de RustDesk. La ventana principal muestra **BUSKIT Soporte Remoto**. Conserva los archivos de configuración privados en el equipo; no los publiques en incidencias.
 
 Las actualizaciones de esta primera versión se descargan manualmente desde las Releases de BUSKIT. La actualización automática del RustDesk original está desactivada para conservar la personalización y el servidor configurado.
 
