@@ -16,7 +16,7 @@ Los instaladores se alojan en el mismo hosting de distribución de agencias, en 
 - Soporte con autorización presencial o contraseña permanente configurada localmente.
 - Varias sesiones desde el mismo equipo del técnico.
 - EXE portátil y MSI x64 mediante GitHub Actions.
-- Instalador MSI en español con logo BUSKIT y ruta fija `C:\Program Files\BusKIT\Soporte`.
+- Instalador MSI en español con logo BUSKIT y ruta fija `C:\BusKIT\Soporte`.
 - Configuración y servicio propios, separados del RustDesk original.
 - Código fuente público, licencia AGPL-3.0 y atribuciones preservadas.
 

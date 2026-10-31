@@ -1388,20 +1388,7 @@ fn get_default_install_info() -> (String, String, String, String) {
 }
 
 fn get_default_install_path() -> String {
-    let mut pf = "C:\\Program Files".to_owned();
-    if let Ok(x) = std::env::var("ProgramFiles") {
-        if std::path::Path::new(&x).exists() {
-            pf = x;
-        }
-    }
-    #[cfg(target_pointer_width = "32")]
-    {
-        let tmp = pf.replace("Program Files", "Program Files (x86)");
-        if std::path::Path::new(&tmp).exists() {
-            pf = tmp;
-        }
-    }
-    format!("{}\\{}", pf, crate::buskit::INSTALL_SUBDIRECTORY)
+    crate::buskit::INSTALL_DIRECTORY.to_owned()
 }
 
 pub fn check_update_broker_process() -> ResultType<()> {
@@ -1726,6 +1713,7 @@ copy /Y \"{tmp_path}\\{app_name} Tray.lnk\" \"%PROGRAMDATA%\\Microsoft\\Windows\
 {uninstall_str}
 chcp 65001
 md \"{path}\"
+icacls \"{path}\" /inheritance:r /grant:r \"*S-1-5-18:(OI)(CI)F\" \"*S-1-5-32-544:(OI)(CI)F\" \"*S-1-5-32-545:(OI)(CI)RX\" || exit /b 1
 {copy_exe}
 reg add {subkey} /f
 reg add {subkey} /f /v DisplayIcon /t REG_SZ /d \"{display_icon}\"

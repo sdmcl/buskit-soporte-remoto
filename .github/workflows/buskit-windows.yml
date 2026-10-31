@@ -137,7 +137,7 @@ jobs:
           if (-not $msi) { throw 'MSI artifact missing' }
           Copy-Item $msi.FullName ../../dist/installer/BUSKIT-Soporte-Remoto.msi
           Pop-Location
-      - name: Verify fresh install and migration from previous MSI
+      - name: Verify fresh install, repair and removal
         shell: pwsh
         run: ./buskit/tools/test-msi.ps1 -MsiPath dist/installer/BUSKIT-Soporte-Remoto.msi
       - name: Save installer test logs

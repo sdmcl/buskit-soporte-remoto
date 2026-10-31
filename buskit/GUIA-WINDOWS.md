@@ -23,14 +23,12 @@ Esta edición inicial no dispone de firma Authenticode comercial. Windows puede 
 Desde la edición `1.5.0-buskit.2`, el MSI muestra el asistente en español, con el logo y los colores de BUSKIT. Instala siempre en:
 
 ```text
-C:\Program Files\BusKIT\Soporte\BUSKITSoporteRemoto.exe
+C:\BusKIT\Soporte\BUSKITSoporteRemoto.exe
 ```
 
-Los otros sistemas deben resolver `%ProgramFiles%\BusKIT\Soporte\BUSKITSoporteRemoto.exe` (en procesos de 32 bits sobre Windows de 64 bits, usar `%ProgramW6432%`). La carpeta es fija también en instalaciones silenciosas; no se cambia desde el asistente ni con `INSTALLFOLDER`.
+Los otros sistemas deben abrir esa ruta exacta, también si son aplicaciones de 32 bits. La carpeta es fija en instalaciones normales y silenciosas; no se cambia desde el asistente ni con `INSTALLFOLDER`.
 
-Para actualizar un equipo con el MSI anterior en `C:\Program Files\BUSKITSoporteRemoto`, ejecuta el nuevo MSI. La actualización retira la instalación anterior y registra el servicio y los accesos directos en la nueva ubicación. No muevas manualmente la carpeta. La identidad técnica y la ubicación de la configuración permanecen iguales; verifica el ID, la contraseña permanente y una conexión después de actualizar.
-
-Si instalaste anteriormente desde el EXE portátil, el MSI solicita desinstalar esa instalación primero. Conserva la configuración privada. Para mantener esta ruta uniforme, usa el MSI como instalador habitual de los clientes.
+Esta entrega se prepara para instalaciones nuevas: no necesitas mover carpetas ni desinstalar una versión anterior. Usa el MSI como instalador habitual de los clientes.
 
 ## Asistencia con una persona presente
 

@@ -5,7 +5,7 @@
   "edition": "1.5.0-buskit.2",
   "revision": 2,
   "msiVersion": "1.5.2",
-  "installSubdirectory": "BusKIT\\Soporte",
+  "installDirectory": "C:\\BusKIT\\Soporte",
   "repository": "https://github.com/sdmcl/buskit-soporte-remoto",
   "idServer": "190.110.124.99:21116",
   "relayServer": "190.110.124.99:21117",

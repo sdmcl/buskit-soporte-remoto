@@ -3,13 +3,18 @@
 	<?include ../Includes.wxi?>
 
 	<Fragment>
-		<!-- Use the same destination on fresh installs and upgrades, including legacy INSTALLFOLDER values. -->
-		<SetDirectory Id="INSTALLFOLDER_INNER" Value="[ProgramFiles64Folder]BusKIT\Soporte\" Sequence="both" />
-		<StandardDirectory Id="ProgramFiles6432Folder">
+		<!-- Keep the public integration path fixed, including silent installations. -->
+		<SetDirectory Id="INSTALLFOLDER_INNER" Value="C:\BusKIT\Soporte\" Sequence="both" />
+		<StandardDirectory Id="WindowsVolume">
 			<Directory Id="BusKITFolder" Name="BusKIT">
 				<Directory Id="INSTALLFOLDER_INNER" Name="Soporte" />
 			</Directory>
 		</StandardDirectory>
+		<Component Id="BusKIT.InstallFolder" Directory="INSTALLFOLDER_INNER" Guid="*">
+			<CreateFolder>
+				<PermissionEx Sddl="D:P(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)(A;OICI;0x1200a9;;;BU)" />
+			</CreateFolder>
+		</Component>
 
 		<StandardDirectory Id="CommonAppDataFolder">
 			<Directory Id="App.Data.Folder" Name="$(var.Product)" />
