@@ -3834,6 +3834,10 @@ impl LoginConfigHandler {
         if display_name.is_empty() {
             display_name = crate::username();
         }
+        if let Some((technician_avatar, technician_name)) = crate::buskit::technician_identity() {
+            avatar = technician_avatar;
+            display_name = technician_name;
+        }
         let display_name = display_name
             .split_whitespace()
             .map(|word| {

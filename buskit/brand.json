@@ -7,6 +7,8 @@
   "msiVersion": "1.5.2",
   "installDirectory": "C:\\BusKIT\\Soporte",
   "repository": "https://github.com/sdmcl/buskit-soporte-remoto",
+  "downloadUrl": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/BUSKIT-Soporte-Remoto.msi",
+  "technicianDisplayName": "Pablo · Soporte BUSKIT",
   "idServer": "190.110.124.99:21116",
   "relayServer": "190.110.124.99:21117",
   "publicKey": "8EynR+X5Es5POkXAgJgE8qp2DWlhLqHT3SUHeVUz6WQ=",

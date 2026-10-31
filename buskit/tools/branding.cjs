@@ -5,9 +5,9 @@ const { Resvg } = require('@resvg/resvg-js');
 const root = path.resolve(__dirname, '../..');
 const brand = JSON.parse(fs.readFileSync(path.join(root, 'buskit/brand.json')));
 const out = path.join(root, 'buskit/brand');
-const rustConstants = {DISPLAY_NAME: brand.name, APP_ID: brand.appId, INSTALL_DIRECTORY: brand.installDirectory, ID_SERVER: brand.idServer, RELAY_SERVER: brand.relayServer, PUBLIC_KEY: brand.publicKey};
+const rustConstants = {DISPLAY_NAME: brand.name, APP_ID: brand.appId, INSTALL_DIRECTORY: brand.installDirectory, ID_SERVER: brand.idServer, RELAY_SERVER: brand.relayServer, PUBLIC_KEY: brand.publicKey, TECHNICIAN_DISPLAY_NAME: brand.technicianDisplayName};
 fs.writeFileSync(path.join(root, 'buskit/brand.rs'), '// Generated from buskit/brand.json by buskit/tools/branding.cjs.\n' + Object.entries(rustConstants).map(([key,value]) => `pub const ${key}: &str = ${JSON.stringify(value)};`).join('\n') + '\n');
-fs.writeFileSync(path.join(root, 'flutter/lib/buskit_brand.dart'), '// Generated from buskit/brand.json by buskit/tools/branding.cjs.\n' + `const buskitName = ${JSON.stringify(brand.name)};\nconst buskitEdition = ${JSON.stringify(brand.edition)};\nconst buskitRepository = ${JSON.stringify(brand.repository)};\n`);
+fs.writeFileSync(path.join(root, 'flutter/lib/buskit_brand.dart'), '// Generated from buskit/brand.json by buskit/tools/branding.cjs.\n' + `const buskitName = ${JSON.stringify(brand.name)};\nconst buskitEdition = ${JSON.stringify(brand.edition)};\nconst buskitRepository = ${JSON.stringify(brand.repository)};\nconst buskitDownloadUrl = ${JSON.stringify(brand.downloadUrl)};\nconst buskitTechnicianDisplayName = ${JSON.stringify(brand.technicianDisplayName)};\n`);
 const read = name => fs.readFileSync(path.join(out, 'source', name), 'utf8');
 const nested = (svg, x, y, width, height) => svg.replace(/<svg[^>]+>/, tag =>
   tag.replace(/\s(?:width|height)="[^"]*"/g, '').replace('<svg', `<svg x="${x}" y="${y}" width="${width}" height="${height}"`));

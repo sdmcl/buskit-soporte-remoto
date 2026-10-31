@@ -46,3 +46,22 @@ pub fn init() {
             .insert("hide-powered-by-me".to_owned(), "Y".to_owned());
     });
 }
+
+pub fn technician_identity() -> Option<(String, String)> {
+    if config::LocalConfig::get_option("buskit-technician-profile") != "Y" {
+        return None;
+    }
+    let name = config::LocalConfig::get_option("buskit-technician-name");
+    let name = if name.trim().is_empty() {
+        TECHNICIAN_DISPLAY_NAME.to_owned()
+    } else {
+        name.trim().to_owned()
+    };
+    let avatar = format!(
+        "data:image/png;base64,{}",
+        hbb_common::base64::encode(include_bytes!(
+            "../buskit/brand/buskit-soporte-remoto-icon.png"
+        ))
+    );
+    Some((avatar, name))
+}

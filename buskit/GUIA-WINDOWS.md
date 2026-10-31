@@ -42,6 +42,19 @@ Al actualizar un equipo existente, se respeta una elección guardada explícitam
 
 Estos cambios todavía no están en los instaladores descargables. La edición publicada continúa siendo `1.5.0-buskit.2`; no se ha asignado una nueva versión ni generado otro instalador.
 
+### Perfil del técnico y descarga desde la aplicación
+
+También queda preparado el botón **Descargar última versión** en **Inicio** y **Ajustes → General → BUSKIT Soporte Remoto**. Abre en el navegador la URL fija del MSI indicada al principio de esta guía. El enlace lleva a la última edición publicada; no instala automáticamente ni cambia según la versión en los sistemas que lo utilizan.
+
+Para identificar al técnico, después de instalar la próxima edición que incluya estos cambios:
+
+1. En el PC desde el que das soporte, abre **Ajustes → General → BUSKIT Soporte Remoto → Perfil del técnico**.
+2. Marca **Usar este equipo como técnico BUSKIT**.
+3. Conserva **Pablo · Soporte BUSKIT**, o escribe el nombre que verá el cliente, y pulsa **Guardar perfil**.
+4. Al iniciar la siguiente conexión, el cliente verá ese nombre y el logo BUSKIT en lugar de la inicial. La imagen se incluye en la aplicación y se transmite con la conexión; no necesita una cuenta Pro ni descargar una imagen externa.
+
+El perfil viene desactivado en las instalaciones nuevas. Déjalo desactivado en los equipos que reciben asistencia. Es una preferencia local del usuario de Windows, no una cuenta ni un permiso adicional. Para volver a la identificación habitual, desmarca la opción y guarda el perfil. No modifica sesiones que ya estén abiertas.
+
 ## Asistencia con una persona presente
 
 1. El cliente abre la aplicación y espera el estado **Listo**.
