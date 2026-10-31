@@ -30,6 +30,18 @@ Los otros sistemas deben abrir esa ruta exacta, también si son aplicaciones de 
 
 Esta entrega se prepara para instalaciones nuevas: no necesitas mover carpetas ni desinstalar una versión anterior. Usa el MSI como instalador habitual de los clientes.
 
+## Cambios preparados, pendientes de publicación
+
+El código prepara **Configuración → Seguridad → Permisos → Habilitar modificación remota de configuración** marcada por defecto. Permite modificar los ajustes del programa durante una sesión ya autorizada y puede desmarcarse después.
+
+También prepara la **contraseña temporal numérica de 6 dígitos** como valor predeterminado. El programa la genera para cada equipo; no se incorpora una contraseña compartida ni se cambia la contraseña permanente. La longitud y el uso de números pueden modificarse después.
+
+En **Acerca de**, el bloque de copyright y lema se sustituye por el enlace **Licencias y avisos**, que conserva el acceso a las atribuciones.
+
+Al actualizar un equipo existente, se respeta una elección guardada explícitamente. Esta opción no define una contraseña ni reemplaza la autenticación de la conexión. Tampoco habilita el permiso independiente para aceptar otras conexiones desde la ventana de permisos.
+
+Estos cambios todavía no están en los instaladores descargables. La edición publicada continúa siendo `1.5.0-buskit.2`; no se ha asignado una nueva versión ni generado otro instalador.
+
 ## Asistencia con una persona presente
 
 1. El cliente abre la aplicación y espera el estado **Listo**.

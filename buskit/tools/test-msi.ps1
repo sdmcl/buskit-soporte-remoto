@@ -60,8 +60,19 @@ New-Item -ItemType Directory -Path (Split-Path $neighbour) -Force | Out-Null
 Set-Content -LiteralPath $neighbour -Value 'No pertenece a Soporte'
 Invoke-Msi '/i' $msi 'fresh' 'INSTALLFOLDER="C:\Ignored" INSTALLFOLDER_INNER="C:\Ignored\Other" DESKTOPSHORTCUTS=1'
 Assert-Installed
+$remoteConfig = 'allow-remote-config-modification'
+if ((& $exe --option $remoteConfig | Out-String).Trim() -ne 'Y') { throw 'La configuracion remota no esta habilitada por defecto.' }
+if ((& $exe --option allow-numeric-one-time-password | Out-String).Trim() -ne 'Y') { throw 'La contrasena temporal no es numerica por defecto.' }
+if ((& $exe --option temporary-password-length | Out-String).Trim() -ne '6') { throw 'La contrasena temporal no tiene seis digitos por defecto.' }
+& $exe --option $remoteConfig N | Out-Null
+& $exe --option allow-numeric-one-time-password N | Out-Null
+& $exe --option temporary-password-length 8 | Out-Null
 Invoke-Msi '/fa' $msi 'repair' 'DESKTOPSHORTCUTS=1'
 Assert-Installed
+if ((& $exe --option $remoteConfig | Out-String).Trim() -ne 'N') { throw 'La eleccion de deshabilitar la configuracion remota no se conservo.' }
+if ((& $exe --option allow-numeric-one-time-password | Out-String).Trim() -ne 'N') { throw 'No se conservo la contrasena temporal alfanumerica elegida.' }
+if ((& $exe --option temporary-password-length | Out-String).Trim() -ne '8') { throw 'No se conservo la longitud elegida para la contrasena temporal.' }
+Write-Output 'Valores predeterminados de soporte y preferencias conservadas tras reparar: OK'
 Invoke-Msi '/x' $msi 'remove-fresh'
 if (Test-Path -LiteralPath $exe) { throw 'La desinstalacion dejo el ejecutable.' }
 if (Get-Service $appId -ErrorAction SilentlyContinue) { throw 'La desinstalacion dejo el servicio.' }

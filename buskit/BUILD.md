@@ -33,6 +33,10 @@ El MSI se compila con cultura `es-es`, gráficos de `buskit/brand/installer-*.pn
 
 `buskit/tools/test-msi.ps1` se ejecuta exclusivamente en el runner Windows desechable: instalación nueva con intentos de cambiar la ruta, reparación y desinstalación. Comprueba idioma, textos, servicio automático, accesos directos, registro, permisos de la carpeta del servicio y conservación de una aplicación vecina bajo BusKIT. Los logs quedan en el artefacto `BUSKIT-MSI-validation`. Esta prueba no sustituye una sesión remota real ni la validación de contraseña y reinicio en el PC del cliente.
 
+Hay cambios de preferencias y de Acerca de preparados sin compilar ni publicar. La versión y el MSI continúan en `1.5.0-buskit.2` / `1.5.2.0`. La prueba ampliada queda preparada para consultar los valores iniciales de configuración remota (`Y`), contraseña temporal numérica (`Y`) y longitud (`6`); luego cambia los tres y comprueba que conserva esas elecciones después de reparar y reiniciar el servicio. Estas comprobaciones nuevas no se han ejecutado todavía.
+
+El 31 de octubre de 2026, Pablo confirmó que la instalación y las pruebas de la edición `1.5.0-buskit.2` fueron exitosas, y aportó una captura de una sesión remota conectada. Esa confirmación corresponde a esa edición; no se infiere de ella una prueba específica de reinicio.
+
 ## Publicación
 
 Publicar Releases con EXE, MSI, fuentes completas, `LICENCE`, guía y `SHA256SUMS.txt`. Conservar siempre el tag/commit correspondiente a cada binario y las instrucciones para construirlo, conforme a AGPL-3.0.
@@ -42,6 +46,8 @@ No añadir contraseñas de clientes, llaves privadas, configuraciones locales, c
 ## Superficie de regresión
 
 - `src/buskit.rs`: inicialización de nombre técnico, servidor, clave pública, idioma y opciones OSS. Activa `hide-powered-by-me` para ocultar la leyenda promocional en todas las interfaces; conserva los avisos legales. No modifica el protocolo ni autenticación de contraseñas.
+- Los cambios pendientes en `src/buskit.rs` añaden `allow-remote-config-modification=Y`, `allow-numeric-one-time-password=Y` y `temporary-password-length=6` a los valores predeterminados que leen la interfaz y el servicio. La configuración guardada conserva prioridad. No se usa una opción forzada ni se modifica el manejo compartido de permisos o generación de contraseñas.
+- El cambio pendiente en `flutter/lib/desktop/pages/desktop_setting_page.dart` afecta únicamente a Acerca de: sustituye el bloque de copyright y lema por un enlace a los avisos de licencia existentes. No se altera el resto de los ajustes ni las atribuciones incluidas en la distribución.
 - `src/common.rs` y `src/lib.rs`: un enlace de inicio y registro del módulo.
 - `src/flutter.rs`, `src/flutter_ffi.rs`, `src/core_main.rs`: nombre visible y búsqueda de la ventana coherentes; servicios, directorios y URI usan el identificador sin espacios.
 - `src/lang.rs`: sustitución del nombre visible en textos; atribución RustDesk preservada.

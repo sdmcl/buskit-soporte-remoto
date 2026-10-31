@@ -2511,20 +2511,17 @@ class _AboutState extends State<_About> {
   @override
   Widget build(BuildContext context) {
     return futureBuilder(future: () async {
-      final license = await bind.mainGetLicense();
       final version = await bind.mainGetVersion();
       final buildDate = await bind.mainGetBuildDate();
       final fingerprint = await bind.mainGetFingerprint();
       final myId = await bind.mainGetMyId();
       return {
-        'license': license,
         'version': version,
         'buildDate': buildDate,
         'fingerprint': fingerprint,
         'myId': myId
       };
     }(), hasData: (data) {
-      final license = data['license'].toString();
       final version = data['version'].toString();
       final buildDate = data['buildDate'].toString();
       final fingerprint = data['fingerprint'].toString();
@@ -2569,33 +2566,14 @@ class _AboutState extends State<_About> {
                     'Código fuente, descargas y ayuda',
                     style: linkStyle,
                   ).marginSymmetric(vertical: 4.0)),
-              Container(
-                decoration: const BoxDecoration(color: Color(0xFF073265)),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
-                child: SelectionArea(
-                    child: Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Copyright © ${DateTime.now().toString().substring(0, 4)} Purslane Tech Pte. Ltd.\n$license',
-                            style: const TextStyle(color: Colors.white),
-                          ),
-                          Text(
-                            translate('Slogan_tip'),
-                            style: TextStyle(
-                                fontWeight: FontWeight.w800,
-                                color: Colors.white),
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                )),
-              ).marginSymmetric(vertical: 4.0)
+              InkWell(
+                  onTap: () {
+                    launchUrlString('$buskitRepository/blob/main/buskit/LICENSE-NOTICE.txt');
+                  },
+                  child: Text(
+                    'Licencias y avisos',
+                    style: linkStyle,
+                  ).marginSymmetric(vertical: 4.0)),
             ],
           ).marginOnly(left: _kContentHMargin)
         ]),

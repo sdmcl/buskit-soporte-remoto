@@ -17,6 +17,18 @@ pub fn init() {
         ] {
             options.insert(key.to_owned(), value.to_owned());
         }
+        config::DEFAULT_SETTINGS.write().unwrap().insert(
+            base::config::keys::OPTION_ALLOW_REMOTE_CONFIG_MODIFICATION.to_owned(),
+            "Y".to_owned(),
+        );
+        config::DEFAULT_SETTINGS.write().unwrap().insert(
+            base::config::keys::OPTION_ALLOW_NUMERNIC_ONE_TIME_PASSWORD.to_owned(),
+            "Y".to_owned(),
+        );
+        config::DEFAULT_SETTINGS.write().unwrap().insert(
+            base::config::keys::OPTION_TEMPORARY_PASSWORD_LENGTH.to_owned(),
+            "6".to_owned(),
+        );
         config::DEFAULT_LOCAL_SETTINGS.write().unwrap()
             .insert("lang".to_owned(), "es".to_owned());
         config::OVERWRITE_LOCAL_SETTINGS.write().unwrap()
