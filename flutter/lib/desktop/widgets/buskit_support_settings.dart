@@ -2,28 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hbb/buskit_brand.dart';
 import 'package:flutter_hbb/common.dart' show showToast;
 import 'package:flutter_hbb/models/platform_model.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-class BuskitDownloadButton extends StatelessWidget {
-  const BuskitDownloadButton({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton.icon(
-      icon: const Icon(Icons.download_outlined, size: 18),
-      label: const Text('Descargar última versión', textAlign: TextAlign.center),
-      onPressed: () async {
-        try {
-          if (await launchUrl(Uri.parse(buskitDownloadUrl),
-              mode: LaunchMode.externalApplication)) return;
-        } catch (_) {
-          // The browser may be unavailable on a managed Windows installation.
-        }
-        showToast('Abre esta dirección en tu navegador: $buskitDownloadUrl');
-      },
-    );
-  }
-}
+export 'buskit_update_button.dart';
 
 class BuskitTechnicianProfile extends StatefulWidget {
   const BuskitTechnicianProfile({Key? key}) : super(key: key);

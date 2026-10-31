@@ -96,7 +96,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
       if (isWindows)
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-          child: BuskitDownloadButton(),
+          child: BuskitUpdateButton(),
         ),
       FutureBuilder<Widget>(
         future: Future.value(

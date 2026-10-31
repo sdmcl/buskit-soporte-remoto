@@ -75,6 +75,16 @@ jobs:
           toolchain: ${{ env.RUST_VERSION }}
           targets: x86_64-pc-windows-msvc
           components: rustfmt
+      - name: Verify BUSKIT update comparison and installer integrity
+        shell: pwsh
+        working-directory: flutter
+        run: |
+          flutter pub get
+          if ($LASTEXITCODE) { throw 'Flutter dependencies failed' }
+          flutter test test/buskit_update_test.dart
+          if ($LASTEXITCODE) { throw 'BUSKIT updater tests failed' }
+          dart analyze lib/common/buskit_update.dart lib/common/buskit_installer_windows.dart lib/desktop/widgets/buskit_update_button.dart
+          if ($LASTEXITCODE) { throw 'BUSKIT updater analysis failed' }
       - uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32
         with:
           prefix-key: buskit-windows-x64
@@ -141,8 +151,8 @@ jobs:
         shell: pwsh
         run: |
           $previous = 'dist/BUSKIT-Soporte-Remoto-previous.msi'
-          Invoke-WebRequest 'https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.2/BUSKIT-Soporte-Remoto.msi' -OutFile $previous
-          if ((Get-FileHash $previous -Algorithm SHA256).Hash.ToLower() -ne '04266a90d5b5caa5e87e91ad838f8d0e4303ea858cb3dd8c89371391465c9670') { throw 'El MSI anterior no coincide con el publicado' }
+          Invoke-WebRequest 'https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.3/BUSKIT-Soporte-Remoto.msi' -OutFile $previous
+          if ((Get-FileHash $previous -Algorithm SHA256).Hash.ToLower() -ne 'b9f6cdad99f781f07ccb96cb20fc3678e7d89589872325238fb7760b84cfd3de') { throw 'El MSI anterior no coincide con el publicado' }
           ./buskit/tools/test-msi.ps1 -MsiPath dist/installer/BUSKIT-Soporte-Remoto.msi -PreviousMsiPath $previous
       - name: Save installer test logs
         if: always()

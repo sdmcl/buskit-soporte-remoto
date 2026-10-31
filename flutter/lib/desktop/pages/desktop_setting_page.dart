@@ -416,7 +416,7 @@ class _GeneralState extends State<_General> {
         if (!isWeb) service(),
         if (isWindows)
           _Card(title: buskitName, children: [
-            const BuskitDownloadButton(),
+            const BuskitUpdateButton(showStatus: true),
             if (!bind.isIncomingOnly()) const BuskitTechnicianProfile(),
           ]),
         theme(),

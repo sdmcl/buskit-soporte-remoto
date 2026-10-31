@@ -44,7 +44,11 @@ Estos cambios corresponden a `1.5.0-buskit.3` (MSI `1.5.3.0`). Los equipos con `
 
 ### Perfil del técnico y descarga desde la aplicación
 
-Se incluye el botón **Descargar última versión** en **Inicio** y **Ajustes → General → BUSKIT Soporte Remoto**. Abre en el navegador la URL fija del MSI indicada al principio de esta guía. El enlace lleva a la última edición publicada; no instala automáticamente ni cambia según la versión en los sistemas que lo utilizan.
+A partir de **1.5.0-buskit.4** (MSI **1.5.4.0**), Inicio muestra **Actualizar** solamente cuando el servidor publica una edición BUSKIT posterior a la instalada. Si ya tienes la última edición, el botón no aparece. En **Ajustes → General → BUSKIT Soporte Remoto** puedes usar **Buscar actualizaciones** y consultar el resultado, incluso si no hay una versión nueva.
+
+Al pulsar **Actualizar**, confirma el aviso de cierre de conexiones. El programa descarga el MSI desde el hosting BUSKIT, comprueba tamaño y SHA-256 e inicia Windows Installer con una barra de progreso. Acepta el permiso de administrador si Windows lo solicita. La instalación cierra la aplicación y sus conexiones; después vuelve a abrir BUSKIT desde el acceso directo. No se reinicia Windows automáticamente. Si cancelas el permiso o falla la descarga, puedes reintentarlo. El registro de la instalación queda junto al MSI en una carpeta temporal `buskit-update-*` del usuario.
+
+La URL fija del MSI indicada al principio de esta guía se conserva para los sistemas de pasajes y las descargas manuales. Para pasar de la edición `.3` a `.4` es necesario instalar ese MSI una vez: `.3` todavía tiene el enlace que abre el navegador. Desde `.4` se podrán iniciar las actualizaciones siguientes dentro del cliente. No se instala nada en segundo plano sin pulsar Actualizar.
 
 Para identificar al técnico después de instalar esta edición:
 
@@ -99,7 +103,7 @@ La clave anterior es pública y autentica el servidor; **no es una contraseña d
 
 La identidad técnica del servicio y del MSI es `BUSKITSoporteRemoto`, con configuración independiente de RustDesk. La ventana principal muestra **BUSKIT Soporte Remoto**. Conserva los archivos de configuración privados en el equipo; no los publiques en incidencias.
 
-Las actualizaciones de esta primera versión se descargan manualmente desde el hosting de BUSKIT o GitHub Releases. La actualización automática del RustDesk original está desactivada para conservar la personalización y el servidor configurado.
+Las actualizaciones se publican en el hosting de BUSKIT y GitHub Releases. Desde la edición `.4`, el cliente consulta `latest.json` al abrirse o volver a primer plano (como máximo una comprobación cada diez minutos, salvo petición manual en Ajustes). La instalación requiere pulsar **Actualizar**. La actualización del RustDesk original permanece desactivada para conservar la personalización y el servidor configurado.
 
 No se incluyen cuentas centrales, agenda sincronizada ni consola Pro. Se conservan el historial local, control remoto, transferencia de archivos y funciones nativas compatibles. Esta compilación inicial no empaqueta controladores opcionales de pantalla virtual ni impresión remota.
 

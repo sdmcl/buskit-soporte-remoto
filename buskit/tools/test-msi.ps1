@@ -90,7 +90,16 @@ if ($PreviousMsiPath) {
     & $exe --option $remoteConfig N | Out-Null
     & $exe --option allow-numeric-one-time-password N | Out-Null
     & $exe --option temporary-password-length 8 | Out-Null
-    Invoke-Msi '/i' $msi 'upgrade' 'DESKTOPSHORTCUTS=1'
+    # Exercise the same verified MSI handoff used by the application's Update button.
+    $hash = (Get-FileHash -LiteralPath $msi -Algorithm SHA256).Hash.ToLower()
+    $bytes = (Get-Item -LiteralPath $msi).Length
+    dart --packages=flutter/.dart_tool/package_config.json buskit/tools/test-client-installer.dart $msi $hash $bytes
+    $clientExit = $LASTEXITCODE
+    if (Test-Path -LiteralPath "$msi.log") {
+        Copy-Item -LiteralPath "$msi.log" -Destination (Join-Path $logs.FullName 'upgrade.log')
+        Remove-Item -LiteralPath "$msi.log"
+    }
+    if ($clientExit -ne 0) { throw "La actualizacion iniciada desde el cliente fallo: $clientExit" }
     Assert-Installed
     foreach ($setting in @{
         'access-mode' = 'view'
