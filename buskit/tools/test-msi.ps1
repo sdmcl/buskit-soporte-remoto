@@ -31,6 +31,7 @@ function Assert-Installed {
     if ($state.InstallLocation.TrimEnd('\') -ne $fixedFolder) { throw 'Registro de instalacion incorrecto.' }
     $arp = Get-ItemProperty -LiteralPath "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\$($state.MsiProductCode)"
     if ($arp.DisplayName -ne $brand.name -or $arp.DisplayVersion -ne "$($brand.msiVersion).0") { throw 'Identidad/version MSI incorrecta.' }
+    if ($arp.InstallLocation.TrimEnd('\') -ne $fixedFolder) { throw 'Ruta incorrecta en Aplicaciones instaladas de Windows.' }
     $shortcut = Join-Path ([Environment]::GetFolderPath('CommonDesktopDirectory')) "$($brand.name).lnk"
     if (-not (Test-Path -LiteralPath $shortcut)) { throw 'Falta acceso directo en espanol.' }
     $shell = New-Object -ComObject WScript.Shell
