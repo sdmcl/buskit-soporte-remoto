@@ -25,30 +25,33 @@ en cache el destino de una entrega anterior.
 
 La carpeta raiz redirige al MSI. `.htaccess` mantiene enlaces fijos mediante
 redirecciones temporales; los archivos reales se conservan en
-`releases/1.5.0-buskit.3/`. El manifiesto identifica esa version como preliminar.
+`releases/1.5.0-buskit.4/`. El manifiesto identifica esa version como preliminar.
 GitHub Releases conserva una segunda descarga de los mismos bytes.
 
-La edicion `1.5.0-buskit.3` incluye el MSI `1.5.3.0` en espanol, con el logo
+La edicion `1.5.0-buskit.4` incluye el MSI `1.5.4.0` en espanol, con el logo
 y los colores de BUSKIT. Instala en `C:\BusKIT\Soporte`; el ejecutable para
 integraciones es `C:\BusKIT\Soporte\BUSKITSoporteRemoto.exe`.
 
-La [compilacion 41236312527](https://github.com/sdmcl/buskit-soporte-remoto/actions/runs/41236312527)
+La [compilacion 41242361565](https://github.com/sdmcl/buskit-soporte-remoto/actions/runs/41242361565)
 comprobo instalacion nueva, reparacion, actualizacion desde el MSI
-`1.5.0-buskit.2` y desinstalacion en Windows. Valido ruta fija incluso al pasar
+`1.5.0-buskit.3` y desinstalacion en Windows. Valido ruta fija incluso al pasar
 otra por linea de comandos, permisos de la carpeta, servicio activo y automatico,
 registro y acceso directo. Tambien comprobo acceso completo, configuracion remota,
 contrasena temporal numerica de seis digitos y conservacion de elecciones al
 reparar y actualizar. La carpeta de otro sistema BusKIT se conservo. Las seis
-operaciones MSI terminaron con codigo 0; el log de actualizacion confirma que
-se instalaron los nuevos `librustdesk.dll` y `data/app.so`.
+operaciones MSI terminaron con codigo 0; la actualizacion uso la misma funcion
+del cliente que inicia Windows Installer y el registro confirma `ProductVersion = 1.5.4.0`.
 
 Se verificaron los SHA-256 de los siete archivos en FTPS, HTTPS y GitHub.
 La descarga completa usando la URL fija del MSI coincide con:
 
-`b9f6cdad99f781f07ccb96cb20fc3678e7d89589872325238fb7760b84cfd3de`
+`e959b9e606a407795df86bbecc24fcf28c73fd490de3beb1b95a111cc8992b2a`
 
-La entrega incluye Acerca de simplificado, perfil local de tecnico con logo
-BUSKIT y nombre editable, y boton de descarga fija en Inicio y Ajustes.
+Inicio ofrece **Actualizar** solo con una edicion posterior; General permite
+comprobar manualmente. Tras confirmar, descarga el MSI de esa edicion por HTTPS,
+comprueba bytes y SHA-256 e inicia Windows Installer con progreso y sin reinicio
+automatico. Para pasar de .3 a .4 se usa una vez el MSI de la URL permanente.
+Se conservan Acerca de simplificado y el perfil local de tecnico con logo BUSKIT.
 El perfil se activa solo en el PC del tecnico; los equipos clientes no lo
 activan por defecto. La guia explica como hacerlo.
 
@@ -72,10 +75,10 @@ anterior y los respaldos del manifiesto y redirecciones se conservaron.
 
 No se cambian los instaladores, manifiestos ni activaciones SQL de otras empresas.
 No se modifica Nginx, PM2, UFW ni el servidor RustDesk. No se publican credenciales.
-La publicacion de `latest.json` aqui no activa actualizaciones automaticas del cliente.
+Publicar `latest.json` anuncia la nueva edicion a partir de .4. La instalacion requiere confirmar Actualizar.
 
 Los binarios de esta entrega corresponden a
-`6282d56463df5264440afd844f75579430c2afbe`, con los mismos hashes de GitHub.
+`35a8d22e91c7e20a0853f01a8f5a64598bc7fd36`, con los mismos hashes de GitHub.
 Los cambios de hosting posteriores solo afectan archivos de distribucion y documentos.
 
 ## Retirada o vuelta a otra version

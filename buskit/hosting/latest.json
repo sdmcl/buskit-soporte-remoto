@@ -1,21 +1,21 @@
 {
   "product": "BUSKIT Soporte Remoto",
-  "version": "1.5.0-buskit.3",
+  "version": "1.5.0-buskit.4",
   "prerelease": true,
   "architecture": "windows-x64",
-  "sourceCommit": "6282d56463df5264440afd844f75579430c2afbe",
+  "sourceCommit": "35a8d22e91c7e20a0853f01a8f5a64598bc7fd36",
   "msi": {
-    "url": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.3/BUSKIT-Soporte-Remoto.msi",
-    "sha256": "b9f6cdad99f781f07ccb96cb20fc3678e7d89589872325238fb7760b84cfd3de",
-    "bytes": 25741323
+    "url": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.4/BUSKIT-Soporte-Remoto.msi",
+    "sha256": "e959b9e606a407795df86bbecc24fcf28c73fd490de3beb1b95a111cc8992b2a",
+    "bytes": 25778187
   },
   "exe": {
-    "url": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.3/BUSKIT-Soporte-Remoto.exe",
-    "sha256": "5c1d17bf8c293b8b840c5272e0654bf095a929197306d82d18776e4511297523",
-    "bytes": 28429312
+    "url": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.4/BUSKIT-Soporte-Remoto.exe",
+    "sha256": "369f985339345379ec83e996eed7daeaf1dba0a24c93c8f6d00596cc8066e0b5",
+    "bytes": 28458496
   },
-  "sourceUrl": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.3/BUSKIT-Soporte-Remoto-source.zip",
-  "checksumsUrl": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.3/SHA256SUMS.txt",
-  "guideUrl": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.3/GUIA-WINDOWS.md",
-  "githubRelease": "https://github.com/sdmcl/buskit-soporte-remoto/releases/tag/v1.5.0-buskit.3"
+  "sourceUrl": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.4/BUSKIT-Soporte-Remoto-source.zip",
+  "checksumsUrl": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.4/SHA256SUMS.txt",
+  "guideUrl": "https://sdm.cl/empresas/BUSKIT/soporte-remoto/releases/1.5.0-buskit.4/GUIA-WINDOWS.md",
+  "githubRelease": "https://github.com/sdmcl/buskit-soporte-remoto/releases/tag/v1.5.0-buskit.4"
 }
