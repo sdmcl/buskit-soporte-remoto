@@ -37,7 +37,7 @@ No añadir contraseñas de clientes, llaves privadas, configuraciones locales, c
 
 ## Superficie de regresión
 
-- `src/buskit.rs`: inicialización de nombre técnico, servidor, clave pública, idioma y opciones OSS; no modifica el protocolo ni autenticación de contraseñas.
+- `src/buskit.rs`: inicialización de nombre técnico, servidor, clave pública, idioma y opciones OSS. Activa `hide-powered-by-me` para ocultar la leyenda promocional en todas las interfaces; conserva los avisos legales. No modifica el protocolo ni autenticación de contraseñas.
 - `src/common.rs` y `src/lib.rs`: un enlace de inicio y registro del módulo.
 - `src/flutter.rs`, `src/flutter_ffi.rs`, `src/core_main.rs`: nombre visible y búsqueda de la ventana coherentes; servicios, directorios y URI usan el identificador sin espacios.
 - `src/lang.rs`: sustitución del nombre visible en textos; atribución RustDesk preservada.

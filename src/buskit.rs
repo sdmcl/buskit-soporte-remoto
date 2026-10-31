@@ -26,5 +26,7 @@ pub fn init() {
         hard.insert("disable-ab".to_owned(), "Y".to_owned());
         config::BUILTIN_SETTINGS.write().unwrap()
             .insert("register-device".to_owned(), "N".to_owned());
+        config::BUILTIN_SETTINGS.write().unwrap()
+            .insert("hide-powered-by-me".to_owned(), "Y".to_owned());
     });
 }
