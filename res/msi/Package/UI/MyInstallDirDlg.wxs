@@ -20,12 +20,11 @@
                 <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="370" Height="0" />
 
                 <Control Id="FolderLabel" Type="Text" X="20" Y="60" Width="290" Height="18" NoPrefix="yes" Text="!(loc.InstallDirDlgFolderLabel)" />
-                <Control Id="Folder" Type="PathEdit" X="20" Y="80" Width="320" Height="18" Property="WIXUI_INSTALLDIR" Indirect="yes" />
-                <Control Id="ChangeFolder" Type="PushButton" X="20" Y="100" Width="56" Height="17" Text="!(loc.InstallDirDlgChange)" />
+                <Control Id="Folder" Type="Text" X="20" Y="80" Width="320" Height="28" NoPrefix="yes" Text="[INSTALLFOLDER_INNER]" />
+                <Control Id="FixedFolderNote" Type="Text" X="20" Y="110" Width="320" Height="28" NoPrefix="yes" Text="!(loc.FixedFolderNote)" />
 
                 <Control Id="ChkBoxStartMenuShortcuts" Type="CheckBox" X="20" Y="140" Width="290" Height="17" Property="STARTMENUSHORTCUTS" CheckBoxValue="1" Text="!(loc.MyInstallDirDlgStartMenuShortcuts)" />
                 <Control Id="ChkBoxDesktopShortcuts" Type="CheckBox" X="20" Y="160" Width="290" Height="17" Property="DESKTOPSHORTCUTS" CheckBoxValue="1" Text="!(loc.MyInstallDirDlgDesktopShortcuts)" />
-                <Control Id="ChkBoxInstallPrinter" Type="CheckBox" X="20" Y="180" Width="290" Height="17" Property="PRINTER" CheckBoxValue="1" Text="!(loc.MyInstallDirDlgPrinter)" />
             </Dialog>
         </UI>
     </Fragment>

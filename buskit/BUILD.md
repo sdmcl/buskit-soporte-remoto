@@ -29,6 +29,10 @@ Los workflows originales que publican para otras plataformas se conservan en `bu
 
 El workflow solo crea un artefacto temporal. Descargarlo a `dist/installer` en la carpeta canónica, verificar SHA-256, iniciar el EXE, comprobar marca/conexión y probar el MSI en un Windows de ensayo antes de publicar una versión estable. Una compilación correcta no prueba una sesión entre dos equipos.
 
+El MSI se compila con cultura `es-es`, gráficos de `buskit/brand/installer-*.png` y carpeta fija `%ProgramFiles%\BusKIT\Soporte`. `brand.json` define la edición y `msiVersion`: la edición 1.5.0-buskit.2 usa MSI 1.5.2.0. Se incrementa uno de los tres primeros campos porque Windows Installer ignora el cuarto al detectar actualizaciones. Se conserva el UpgradeCode derivado de `BUSKITSoporteRemoto.exe` y se permite detectar el paquete anterior en inglés.
+
+`buskit/tools/test-msi.ps1` se ejecuta exclusivamente en el runner Windows desechable: instalación nueva con intentos de cambiar la ruta, actualización desde el MSI publicado 1.5.0.1, reparación y desinstalación. Comprueba idioma, textos, servicio automático, accesos directos, registro, conservación de datos locales y de una aplicación vecina bajo BusKIT. Los logs quedan en el artefacto `BUSKIT-MSI-validation`. Esta prueba no sustituye una sesión remota real ni la validación de contraseña y reinicio en el PC del cliente.
+
 ## Publicación
 
 Publicar Releases con EXE, MSI, fuentes completas, `LICENCE`, guía y `SHA256SUMS.txt`. Conservar siempre el tag/commit correspondiente a cada binario y las instrucciones para construirlo, conforme a AGPL-3.0.
@@ -43,5 +47,7 @@ No añadir contraseñas de clientes, llaves privadas, configuraciones locales, c
 - `src/lang.rs`: sustitución del nombre visible en textos; atribución RustDesk preservada.
 - Flutter `common.dart`, ajustes y recursos: colores, logo, iconos, versión BUSKIT y enlaces de fuente/privacidad. La pantalla principal limita el área desplazable del panel izquierdo para que la instalación siga accesible con logo y nombres largos; el aviso abrevia únicamente el nombre a BUSKIT.
 - Recursos Windows y portable: metadatos e iconos del producto. MSI utiliza el empaquetado upstream con identidad independiente.
+- `src/platform/windows.rs`: la instalación desde el EXE propone la misma subcarpeta BusKIT/Soporte; la lectura de instalaciones existentes conserva su ruta registrada.
+- `res/msi/Package`: ruta fija, asistente español, gráficos BUSKIT, nombre visible y actualización desde el MSI anterior. Servicio y configuración conservan el identificador técnico. Se oculta la opción de impresora porque esta distribución no incluye ese controlador.
 
 No se modifica `libs/hbb_common`, captura de pantalla, cifrado, transporte, teclado, contraseña permanente o motor de sesiones. No se modifica el servidor Linux ni ningún proceso de seguimiento/GPS al compilar este cliente.

@@ -124,18 +124,30 @@ jobs:
       - name: Package MSI
         shell: pwsh
         run: |
+          $brand = Get-Content buskit/brand.json -Raw | ConvertFrom-Json
           Push-Location res/msi
-          python preprocess.py --app-name BUSKITSoporteRemoto --manufacturer BUSKIT --version 1.5.0 --revision-version 1 -d ../../rustdesk
+          python preprocess.py --app-name BUSKITSoporteRemoto --manufacturer BUSKIT --version $brand.msiVersion --revision-version 0 -d ../../rustdesk
           if ($LASTEXITCODE) { throw 'MSI preprocessing failed' }
           Copy-Item ../../buskit/License.rtf Package/License.rtf -Force
           nuget restore msi.sln
           if ($LASTEXITCODE) { throw 'NuGet restore failed' }
           msbuild msi.sln -p:Configuration=Release -p:Platform=x64 /p:TargetVersion=Windows10
           if ($LASTEXITCODE) { throw 'MSI build failed' }
-          $msi = Get-ChildItem Package/bin/*/Release/en-us/Package.msi | Select-Object -First 1
+          $msi = Get-ChildItem Package/bin/*/Release/es-es/Package.msi | Select-Object -First 1
           if (-not $msi) { throw 'MSI artifact missing' }
           Copy-Item $msi.FullName ../../dist/installer/BUSKIT-Soporte-Remoto.msi
           Pop-Location
+      - name: Verify fresh install and migration from previous MSI
+        shell: pwsh
+        run: ./buskit/tools/test-msi.ps1 -MsiPath dist/installer/BUSKIT-Soporte-Remoto.msi
+      - name: Save installer test logs
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: BUSKIT-MSI-validation
+          path: dist/msi-validation/
+          retention-days: 3
+          if-no-files-found: ignore
       - name: Package source, notices and checksums
         shell: pwsh
         run: |

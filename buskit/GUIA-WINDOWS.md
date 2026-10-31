@@ -18,6 +18,20 @@ También disponibles en GitHub: https://github.com/sdmcl/buskit-soporte-remoto/r
 La aplicación ya incorpora el servidor y la clave pública de BUSKIT. No necesitas introducirlos.
 Esta edición inicial no dispone de firma Authenticode comercial. Windows puede mostrar “editor desconocido”; no desactives Defender ni las protecciones del equipo. Verifica el origen y el SHA-256 antes de instalar.
 
+## Instalador en español y carpeta fija
+
+Desde la edición `1.5.0-buskit.2`, el MSI muestra el asistente en español, con el logo y los colores de BUSKIT. Instala siempre en:
+
+```text
+C:\Program Files\BusKIT\Soporte\BUSKITSoporteRemoto.exe
+```
+
+Los otros sistemas deben resolver `%ProgramFiles%\BusKIT\Soporte\BUSKITSoporteRemoto.exe` (en procesos de 32 bits sobre Windows de 64 bits, usar `%ProgramW6432%`). La carpeta es fija también en instalaciones silenciosas; no se cambia desde el asistente ni con `INSTALLFOLDER`.
+
+Para actualizar un equipo con el MSI anterior en `C:\Program Files\BUSKITSoporteRemoto`, ejecuta el nuevo MSI. La actualización retira la instalación anterior y registra el servicio y los accesos directos en la nueva ubicación. No muevas manualmente la carpeta. La identidad técnica y la ubicación de la configuración permanecen iguales; verifica el ID, la contraseña permanente y una conexión después de actualizar.
+
+Si instalaste anteriormente desde el EXE portátil, el MSI solicita desinstalar esa instalación primero. Conserva la configuración privada. Para mantener esta ruta uniforme, usa el MSI como instalador habitual de los clientes.
+
 ## Asistencia con una persona presente
 
 1. El cliente abre la aplicación y espera el estado **Listo**.

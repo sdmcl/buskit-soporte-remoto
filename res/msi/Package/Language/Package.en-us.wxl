@@ -6,6 +6,8 @@ This file contains the declaration of all the localizable strings.
 
 	<String Id="SummaryCodepage" Value="1252" />
 	<String Id="ProductLanguage" Value="1033" />
+	<String Id="ProductDisplayName" Value="BUSKIT Soporte Remoto" />
+	<String Id="FixedFolderNote" Value="This folder is fixed so other BusKIT applications can find Remote Support." />
 
 	<!-- General strings -->
 	<String Id="DowngradeError" Value="A newer version of [ProductName] is already installed." />

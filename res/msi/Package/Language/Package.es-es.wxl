@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="es-es" Codepage="1252" xmlns="http://wixtoolset.org/schemas/v4/wxl">
+  <String Id="SummaryCodepage" Value="1252" />
+  <String Id="ProductLanguage" Value="3082" />
+  <String Id="ProductDisplayName" Value="BUSKIT Soporte Remoto" />
+  <String Id="DowngradeError" Value="Ya hay una versión más reciente de [ProductName] instalada." />
+  <String Id="AR_Comment" Value="Asistencia remota de BUSKIT para equipos Windows." />
+  <String Id="F_App" Value="BUSKIT Soporte Remoto" />
+  <String Id="F_App_Desc" Value="Aplicación y servicio de asistencia remota." />
+  <String Id="SC_Uninstall" Value="Desinstalar BUSKIT Soporte Remoto" />
+  <String Id="SC_Uninstall_Desc" Value="Quitar BUSKIT Soporte Remoto del equipo." />
+  <String Id="F_Client" Value="Aplicación" />
+  <String Id="F_Client_Desc" Value="Interfaz para recibir y prestar asistencia remota." />
+  <String Id="F_LAVFilters" Value="Filtros multimedia" />
+  <String Id="F_LAVFilters_Desc" Value="Componentes de audio y video." />
+  <String Id="SC_Client" Value="BUSKIT Soporte Remoto" />
+  <String Id="SC_Client_Desc" Value="Abrir BUSKIT Soporte Remoto." />
+  <String Id="SC_Client_Tray" Value="BUSKITSoporteRemoto Tray" />
+  <String Id="SC_Client_Tray_Desc" Value="Mostrar BUSKIT Soporte Remoto en el área de notificaciones." />
+  <String Id="F_Server" Value="Servicio" />
+  <String Id="F_Server_Desc" Value="Servicio de asistencia remota en segundo plano." />
+  <String Id="Service_DisplayName" Value="Servicio de BUSKIT Soporte Remoto" />
+  <String Id="Service_Description" Value="Permite la asistencia remota autorizada en este equipo." />
+  <String Id="LC_OS" Value="[ProductName] requiere una versión compatible de Windows de 64 bits." />
+  <String Id="LC_ADMIN" Value="Necesitas permisos de administrador para instalar [ProductName]." />
+  <String Id="AnotherAppDialogTitle" Value="Instalación anterior detectada" />
+  <String Id="AnotherAppDialogDescription" Value="La aplicación anterior se instaló desde el EXE. Desinstálala antes de continuar con este MSI y conserva su configuración." />
+  <String Id="MyInstallDirDlgDesktopShortcuts" Value="Crear un acceso directo en el escritorio" />
+  <String Id="MyInstallDirDlgStartMenuShortcuts" Value="Crear accesos directos en el menú Inicio" />
+  <String Id="MyInstallDirDlgPrinter" Value="Instalar la impresora remota" />
+  <String Id="FixedFolderNote" Value="La carpeta es fija para que los sistemas BusKIT puedan abrir esta aplicación. Tus datos de conexión se guardan por separado." />
+  <String Id="WelcomeDlgTitle" Value="{\WixUI_Font_Bigger}Bienvenido a&#13;&#10;BUSKIT Soporte Remoto" />
+  <String Id="WelcomeDlgDescription" Value="Este asistente instalará la aplicación de asistencia remota de BUSKIT en tu equipo.&#13;&#10;&#13;&#10;Pulsa Siguiente para continuar." />
+  <String Id="InstallDirDlgTitle" Value="{\WixUI_Font_Title}Carpeta y accesos directos" />
+  <String Id="InstallDirDlgDescription" Value="BUSKIT Soporte Remoto se instalará en una carpeta fija." />
+  <String Id="InstallDirDlgFolderLabel" Value="Carpeta de instalación:" />
+  <String Id="ExitDialogTitle" Value="{\WixUI_Font_Bigger}Instalación completada" />
+  <String Id="ExitDialogDescription" Value="BUSKIT Soporte Remoto está instalado.&#13;&#10;&#13;&#10;Pulsa Finalizar para cerrar el asistente." />
+</WixLocalization>

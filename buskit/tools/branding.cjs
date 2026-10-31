@@ -5,7 +5,7 @@ const { Resvg } = require('@resvg/resvg-js');
 const root = path.resolve(__dirname, '../..');
 const brand = JSON.parse(fs.readFileSync(path.join(root, 'buskit/brand.json')));
 const out = path.join(root, 'buskit/brand');
-const rustConstants = {DISPLAY_NAME: brand.name, APP_ID: brand.appId, ID_SERVER: brand.idServer, RELAY_SERVER: brand.relayServer, PUBLIC_KEY: brand.publicKey};
+const rustConstants = {DISPLAY_NAME: brand.name, APP_ID: brand.appId, INSTALL_SUBDIRECTORY: brand.installSubdirectory, ID_SERVER: brand.idServer, RELAY_SERVER: brand.relayServer, PUBLIC_KEY: brand.publicKey};
 fs.writeFileSync(path.join(root, 'buskit/brand.rs'), '// Generated from buskit/brand.json by buskit/tools/branding.cjs.\n' + Object.entries(rustConstants).map(([key,value]) => `pub const ${key}: &str = ${JSON.stringify(value)};`).join('\n') + '\n');
 fs.writeFileSync(path.join(root, 'flutter/lib/buskit_brand.dart'), '// Generated from buskit/brand.json by buskit/tools/branding.cjs.\n' + `const buskitName = ${JSON.stringify(brand.name)};\nconst buskitEdition = ${JSON.stringify(brand.edition)};\nconst buskitRepository = ${JSON.stringify(brand.repository)};\n`);
 const read = name => fs.readFileSync(path.join(out, 'source', name), 'utf8');
@@ -63,4 +63,19 @@ const preview = svg(1440, 850,
   `<rect x="50" y="530" width="1340" height="270" rx="32" fill="${brand.colors.navy}"/>` +
   nested(icon, 90, 565, 200, 200) + nested(logo(true), 370, 555, 730, 230));
 save('preview.png', png(preview, 1440));
+const installerDialog = svg(493, 312,
+  '<rect width="493" height="312" fill="#FFFFFF"/>' +
+  `<rect width="164" height="312" fill="${brand.colors.navy}"/>` +
+  `<rect x="159" width="5" height="312" fill="${brand.colors.teal}"/>` +
+  nested(logo(true), 14, 36, 136, 44) +
+  `<path d="M28 147 H134 V214 H28 Z M61 215 V232 H101 V215 M45 233 H117" fill="none" stroke="#FFFFFF" stroke-width="3"/>` +
+  `<path d="M63 170 H101 M90 159 L101 170 L90 181 M99 194 H61 M72 183 L61 194 L72 205" fill="none" stroke="${brand.colors.teal}" stroke-width="3"/>` +
+  '<text x="81" y="269" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="10" fill="#FFFFFF">ASISTENCIA A DISTANCIA</text>');
+const installerBanner = svg(493, 58,
+  '<rect width="493" height="58" fill="#FFFFFF"/>' +
+  nested(logo(false), 365, 8, 116, 37) +
+  `<rect y="55" width="365" height="3" fill="${brand.colors.navy}"/>` +
+  `<rect x="365" y="55" width="128" height="3" fill="${brand.colors.teal}"/>`);
+save('installer-dialog.png', png(installerDialog, 493));
+save('installer-banner.png', png(installerBanner, 493));
 console.log(`Generated ${brand.name}: SVG, PNG, ICO and Windows/Flutter resources.`);

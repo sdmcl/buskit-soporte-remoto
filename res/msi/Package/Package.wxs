@@ -4,9 +4,9 @@
 
 	<?include Includes.wxi?>
 
-	<Package Name="$(var.Product)" Version="$(var.Version)" Manufacturer="$(var.Manufacturer)" Language="!(loc.ProductLanguage)" UpgradeCode="$(var.UpgradeCode)" Scope="perMachine">
+	<Package Name="!(loc.ProductDisplayName)" Version="$(var.Version)" Manufacturer="$(var.Manufacturer)" Language="!(loc.ProductLanguage)" UpgradeCode="$(var.UpgradeCode)" Scope="perMachine">
 
-		<SummaryInformation Keywords="Installer" Description="$(var.Description)" Codepage="!(loc.SummaryCodepage)" />
+		<SummaryInformation Keywords="Instalador" Description="Instalador de BUSKIT Soporte Remoto" Codepage="!(loc.SummaryCodepage)" />
 
 		<!--<PropertyRef Id="UpgradesFile" />-->
 
@@ -24,6 +24,8 @@
 
 		<!-- User Interface -->
 		<WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+		<WixVariable Id="WixUIBannerBmp" Value="..\..\..\buskit\brand\installer-banner.png" />
+		<WixVariable Id="WixUIDialogBmp" Value="..\..\..\buskit\brand\installer-dialog.png" />
 
 		<ui:WixUI Id="UI_MyInstallDialog" InstallDirectory="INSTALLFOLDER_INNER" />
 		<UIRef Id="WixUI_ErrorProgressText" />
@@ -43,7 +45,7 @@
 
 		</InstallExecuteSequence>
 
-		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" Schedule="afterInstallInitialize" AllowSameVersionUpgrades="yes" />
+		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" Schedule="afterInstallInitialize" IgnoreLanguage="yes" />
 
 		<Feature Id="App" Level="1" AllowAdvertise="no" Display="expand" Title="!(loc.F_App)" Description="!(loc.F_App_Desc)" AllowAbsent="no">
 			<ComponentGroupRef Id="Components" />
