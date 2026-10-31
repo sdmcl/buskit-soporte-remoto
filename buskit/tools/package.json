@@ -1,0 +1,7 @@
+{
+  "name": "buskit-soporte-remoto-branding",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": { "build": "node branding.cjs" },
+  "dependencies": { "@resvg/resvg-js": "2.6.2" }
+}

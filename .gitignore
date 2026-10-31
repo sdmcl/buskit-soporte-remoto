@@ -58,3 +58,15 @@ libsciter.dylib
 flutter/web/
 # libdrmtap is cloned at build time by build.py (not a submodule)
 /third_party/libdrmtap/
+
+# BUSKIT: generated downloads and local tooling only; never endpoint credentials.
+/dist/
+/buskit/tools/node_modules/
+/buskit/validation/
+!/buskit/brand/*.png
+!/buskit/brand/**/*.svg
+!/buskit/brand/*.svg
+!/flutter/assets/logo.png
+!/flutter/assets/logo_light.png
+!/flutter/assets/logo_dark.png
+!/flutter/assets/icon.png

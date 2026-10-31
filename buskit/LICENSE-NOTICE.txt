@@ -1,0 +1,12 @@
+BUSKIT Soporte Remoto es una distribucion modificada de RustDesk 1.5.0.
+RustDesk: Copyright Purslane Tech Pte. Ltd. y sus colaboradores.
+Personalizacion e identidad del producto: BUSKIT, 2026.
+
+Codigo fuente, instrucciones de compilacion y modificaciones:
+https://github.com/sdmcl/buskit-soporte-remoto
+
+Este software conserva la licencia GNU Affero General Public License v3.0
+del proyecto original. Consulte LICENCE incluido en la distribucion.
+Las bibliotecas y componentes de terceros conservan sus licencias.
+La licencia del software no concede derechos sobre las marcas BUSKIT o RustDesk.
+Este proyecto no esta afiliado ni es una edicion Pro de RustDesk.

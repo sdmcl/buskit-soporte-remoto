@@ -1,0 +1,12 @@
+{
+  "name": "BUSKIT Soporte Remoto",
+  "appId": "BUSKITSoporteRemoto",
+  "upstreamVersion": "1.5.0",
+  "edition": "1.5.0-buskit.1",
+  "revision": 1,
+  "repository": "https://github.com/sdmcl/buskit-soporte-remoto",
+  "idServer": "190.110.124.99:21116",
+  "relayServer": "190.110.124.99:21117",
+  "publicKey": "8EynR+X5Es5POkXAgJgE8qp2DWlhLqHT3SUHeVUz6WQ=",
+  "colors": { "navy": "#073265", "teal": "#00999B" }
+}
