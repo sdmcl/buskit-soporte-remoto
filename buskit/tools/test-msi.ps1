@@ -61,14 +61,17 @@ Set-Content -LiteralPath $neighbour -Value 'No pertenece a Soporte'
 Invoke-Msi '/i' $msi 'fresh' 'INSTALLFOLDER="C:\Ignored" INSTALLFOLDER_INNER="C:\Ignored\Other" DESKTOPSHORTCUTS=1'
 Assert-Installed
 $remoteConfig = 'allow-remote-config-modification'
+if ((& $exe --option access-mode | Out-String).Trim() -ne 'full') { throw 'Acceso completo no esta seleccionado por defecto.' }
 if ((& $exe --option $remoteConfig | Out-String).Trim() -ne 'Y') { throw 'La configuracion remota no esta habilitada por defecto.' }
 if ((& $exe --option allow-numeric-one-time-password | Out-String).Trim() -ne 'Y') { throw 'La contrasena temporal no es numerica por defecto.' }
 if ((& $exe --option temporary-password-length | Out-String).Trim() -ne '6') { throw 'La contrasena temporal no tiene seis digitos por defecto.' }
+& $exe --option access-mode custom | Out-Null
 & $exe --option $remoteConfig N | Out-Null
 & $exe --option allow-numeric-one-time-password N | Out-Null
 & $exe --option temporary-password-length 8 | Out-Null
 Invoke-Msi '/fa' $msi 'repair' 'DESKTOPSHORTCUTS=1'
 Assert-Installed
+if ((& $exe --option access-mode | Out-String).Trim() -ne 'custom') { throw 'No se conservo el modo de permisos personalizado elegido.' }
 if ((& $exe --option $remoteConfig | Out-String).Trim() -ne 'N') { throw 'La eleccion de deshabilitar la configuracion remota no se conservo.' }
 if ((& $exe --option allow-numeric-one-time-password | Out-String).Trim() -ne 'N') { throw 'No se conservo la contrasena temporal alfanumerica elegida.' }
 if ((& $exe --option temporary-password-length | Out-String).Trim() -ne '8') { throw 'No se conservo la longitud elegida para la contrasena temporal.' }

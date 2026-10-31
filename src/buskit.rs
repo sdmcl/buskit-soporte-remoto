@@ -18,6 +18,10 @@ pub fn init() {
             options.insert(key.to_owned(), value.to_owned());
         }
         config::DEFAULT_SETTINGS.write().unwrap().insert(
+            base::config::keys::OPTION_ACCESS_MODE.to_owned(),
+            "full".to_owned(),
+        );
+        config::DEFAULT_SETTINGS.write().unwrap().insert(
             base::config::keys::OPTION_ALLOW_REMOTE_CONFIG_MODIFICATION.to_owned(),
             "Y".to_owned(),
         );

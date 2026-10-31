@@ -32,7 +32,7 @@ Esta entrega se prepara para instalaciones nuevas: no necesitas mover carpetas n
 
 ## Cambios preparados, pendientes de publicación
 
-El código prepara **Configuración → Seguridad → Permisos → Habilitar modificación remota de configuración** marcada por defecto. Permite modificar los ajustes del programa durante una sesión ya autorizada y puede desmarcarse después.
+El código prepara **Configuración → Seguridad → Permisos → Acceso completo** seleccionado por defecto. Habilita los permisos disponibles para una sesión autorizada, incluida la modificación remota de configuración. Puede cambiarse después a **Personalizado** o **Compartir pantalla**; para deshabilitar permisos individuales, seleccionar **Personalizado** y desmarcarlos. No elimina el requisito de contraseña o aceptación configurado para conectarse.
 
 También prepara la **contraseña temporal numérica de 6 dígitos** como valor predeterminado. El programa la genera para cada equipo; no se incorpora una contraseña compartida ni se cambia la contraseña permanente. La longitud y el uso de números pueden modificarse después.
 
