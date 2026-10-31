@@ -36,7 +36,7 @@ El código prepara **Configuración → Seguridad → Permisos → Habilitar mod
 
 También prepara la **contraseña temporal numérica de 6 dígitos** como valor predeterminado. El programa la genera para cada equipo; no se incorpora una contraseña compartida ni se cambia la contraseña permanente. La longitud y el uso de números pueden modificarse después.
 
-En **Acerca de**, el bloque de copyright y lema se sustituye por el enlace **Licencias y avisos**, que conserva el acceso a las atribuciones.
+En **Acerca de** quedan el nombre, versión, fecha de compilación, huella digital e ID. Se retiran el bloque de copyright y lema y los tres enlaces de privacidad, código fuente y licencias. Los documentos de licencia y atribuciones se conservan en la distribución y en el repositorio.
 
 Al actualizar un equipo existente, se respeta una elección guardada explícitamente. Esta opción no define una contraseña ni reemplaza la autenticación de la conexión. Tampoco habilita el permiso independiente para aceptar otras conexiones desde la ventana de permisos.
 

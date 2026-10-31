@@ -21,7 +21,6 @@ import 'package:flutter_hbb/models/state_model.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../common/widgets/dialog.dart';
 import '../../common/widgets/login.dart';
@@ -2526,7 +2525,6 @@ class _AboutState extends State<_About> {
       final buildDate = data['buildDate'].toString();
       final fingerprint = data['fingerprint'].toString();
       final myId = data['myId'].toString();
-      const linkStyle = TextStyle(decoration: TextDecoration.underline);
       final scrollController = ScrollController();
       return SingleChildScrollView(
         controller: scrollController,
@@ -2550,30 +2548,6 @@ class _AboutState extends State<_About> {
               SelectionArea(
                   child: Text('${translate('ID')}: $myId')
                       .marginSymmetric(vertical: 4.0)),
-              InkWell(
-                  onTap: () {
-                    launchUrlString('$buskitRepository/blob/main/buskit/PRIVACIDAD.md');
-                  },
-                  child: Text(
-                    translate('Privacy Statement'),
-                    style: linkStyle,
-                  ).marginSymmetric(vertical: 4.0)),
-              InkWell(
-                  onTap: () {
-                    launchUrlString(buskitRepository);
-                  },
-                  child: Text(
-                    'Código fuente, descargas y ayuda',
-                    style: linkStyle,
-                  ).marginSymmetric(vertical: 4.0)),
-              InkWell(
-                  onTap: () {
-                    launchUrlString('$buskitRepository/blob/main/buskit/LICENSE-NOTICE.txt');
-                  },
-                  child: Text(
-                    'Licencias y avisos',
-                    style: linkStyle,
-                  ).marginSymmetric(vertical: 4.0)),
             ],
           ).marginOnly(left: _kContentHMargin)
         ]),

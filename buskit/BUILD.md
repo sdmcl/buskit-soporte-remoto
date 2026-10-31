@@ -47,7 +47,7 @@ No añadir contraseñas de clientes, llaves privadas, configuraciones locales, c
 
 - `src/buskit.rs`: inicialización de nombre técnico, servidor, clave pública, idioma y opciones OSS. Activa `hide-powered-by-me` para ocultar la leyenda promocional en todas las interfaces; conserva los avisos legales. No modifica el protocolo ni autenticación de contraseñas.
 - Los cambios pendientes en `src/buskit.rs` añaden `allow-remote-config-modification=Y`, `allow-numeric-one-time-password=Y` y `temporary-password-length=6` a los valores predeterminados que leen la interfaz y el servicio. La configuración guardada conserva prioridad. No se usa una opción forzada ni se modifica el manejo compartido de permisos o generación de contraseñas.
-- El cambio pendiente en `flutter/lib/desktop/pages/desktop_setting_page.dart` afecta únicamente a Acerca de: sustituye el bloque de copyright y lema por un enlace a los avisos de licencia existentes. No se altera el resto de los ajustes ni las atribuciones incluidas en la distribución.
+- El cambio pendiente en `flutter/lib/desktop/pages/desktop_setting_page.dart` afecta únicamente a Acerca de: retira el bloque de copyright y lema y los enlaces de privacidad, código fuente y licencias. Conserva nombre, versión, fecha de compilación, huella digital e ID. No se altera el resto de los ajustes ni los documentos de licencia y atribuciones incluidos en la distribución.
 - `src/common.rs` y `src/lib.rs`: un enlace de inicio y registro del módulo.
 - `src/flutter.rs`, `src/flutter_ffi.rs`, `src/core_main.rs`: nombre visible y búsqueda de la ventana coherentes; servicios, directorios y URI usan el identificador sin espacios.
 - `src/lang.rs`: sustitución del nombre visible en textos; atribución RustDesk preservada.
